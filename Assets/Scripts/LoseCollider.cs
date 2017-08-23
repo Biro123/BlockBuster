@@ -4,9 +4,12 @@ using UnityEngine;
 
 public class LoseCollider : MonoBehaviour {
 
+    public LevelManager levelManager;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         print("Trigger");
+        levelManager.LoadLevel("Lose");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
