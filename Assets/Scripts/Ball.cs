@@ -30,7 +30,7 @@ public class Ball : MonoBehaviour {
             if (Input.GetMouseButtonDown(0))
             {
                 print("mouse clicked");
-                GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 10.0f);
+                GetComponent<Rigidbody2D>().velocity = new Vector2(2.0f, 10.0f);
                 hasStarted = true;
             }
         }
