@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class LoseCollider : MonoBehaviour {
 
-    public LevelManager levelManager;
+    private LevelManager levelManager;
+
+    // Use this for initialization
+    void Start()
+    {
+        /// Find the paddle in the scene
+        levelManager = GameObject.FindObjectOfType<LevelManager>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
