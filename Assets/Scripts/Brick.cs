@@ -11,10 +11,12 @@ public class Brick : MonoBehaviour {
     private int timesHit;
     private bool isBreakable;
     private LevelManager levelManager;
+    private Score score;
 
 	// Use this for initialization
 	void Start () {
         levelManager = GameObject.FindObjectOfType<LevelManager>();
+        score = GameObject.FindObjectOfType<Score>();  
         timesHit = 0;
 
         /// Determine how many breakable bricks are in the level
@@ -51,6 +53,7 @@ public class Brick : MonoBehaviour {
 
         if (timesHit >= maxHits)
         {
+            score.IncrementScore(10);
             breakableCount--;
             levelManager.BrickDestroyed();
             Destroy(gameObject);

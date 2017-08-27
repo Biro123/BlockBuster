@@ -36,6 +36,12 @@ public class Ball : MonoBehaviour {
 
 	}
 
+    public void SetHasStarted(bool started)
+    {
+        hasStarted = started;
+        print ("hasstarted:" + hasStarted);
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         /// introduce a small random element to the bounce angles to avoid 

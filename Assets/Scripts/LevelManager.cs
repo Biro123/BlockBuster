@@ -7,6 +7,12 @@ public class LevelManager : MonoBehaviour {
         
     public void LoadLevel(string name)
     {
+        if (name == "Level_01")
+        {
+            Score.score = 0;
+            Lives.lives = 3;
+        }
+
         SceneManager.LoadScene(name);
     }
 
