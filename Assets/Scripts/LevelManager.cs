@@ -20,7 +20,14 @@ public class LevelManager : MonoBehaviour {
     {
         /// buildindex is from build settings.
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-         
+    }
+
+    public void BrickDestroyed()
+    {
+        if (Brick.breakableCount <= 0) // if last brick destroyed
+        {
+            LoadNextLevel();
+        }
     }
 
     private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
