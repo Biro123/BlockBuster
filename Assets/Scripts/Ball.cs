@@ -40,13 +40,21 @@ public class Ball : MonoBehaviour {
     {
         /// introduce a small random element to the bounce angles to avoid 
         /// getting stuck in bounce 'loops'
-        Vector2 tweak = new Vector2( Random.Range(0.0f, 0.2f), Random.Range(0.0f, 0.2f) );
+        Vector2 tweak1 = new Vector2( Random.Range(0.0f, 0.2f), Random.Range(0.0f, 0.05f) );
+        GetComponent<Rigidbody2D>().velocity += tweak1;
 
         if (hasStarted && collision.gameObject.tag != "Breakable") 
         {
-            GetComponent<AudioSource>().Play();
-            GetComponent<Rigidbody2D>().velocity += tweak;
+            GetComponent<AudioSource>().Play();           
         }
+
+        /// Up the vertical velocity slightly every time the padle bounces it.
+        if (collision.gameObject.tag == "Player")
+        {
+            Vector2 tweak2 = new Vector2(0f, 0.2f);
+            GetComponent<Rigidbody2D>().velocity += tweak2;
+        }
+
     }
 
 }
