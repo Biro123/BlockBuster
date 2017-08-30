@@ -13,6 +13,9 @@ public class LevelManager : MonoBehaviour {
             Lives.lives = 3;
         }
 
+        /// reset brick count so leftover bricks from last game are not included
+        Brick.breakableCount = 0;
+
         SceneManager.LoadScene(name);
     }
 
@@ -24,6 +27,9 @@ public class LevelManager : MonoBehaviour {
 
     public void LoadNextLevel()
     {
+        /// reset brick count so leftover bricks from last game are not included
+        Brick.breakableCount = 0;
+
         /// buildindex is from build settings.
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }

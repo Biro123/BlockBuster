@@ -20,9 +20,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4700743133367238}
   - component: {fileID: 212161534487743636}
-  - component: {fileID: 61564384766800772}
   - component: {fileID: 50185139972037792}
   - component: {fileID: 114987028547752124}
+  - component: {fileID: 60539715793228006}
   m_Layer: 0
   m_Name: Paddle
   m_TagString: Player
@@ -63,8 +63,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 6
---- !u!61 &61564384766800772
-BoxCollider2D:
+--- !u!60 &60539715793228006
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -73,7 +73,7 @@ BoxCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
@@ -85,9 +85,15 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.91, y: 0.11}
-  m_EdgeRadius: 0.1
+  m_Points:
+    m_Paths:
+    - - {x: 0.0025096196, y: 0.18622398}
+      - {x: -0.5, y: 0.16015625}
+      - {x: -0.79977936, y: -0.032969475}
+      - {x: -0.5, y: -0.16015625}
+      - {x: 0.5, y: -0.16015625}
+      - {x: 0.80629635, y: -0.030797005}
+      - {x: 0.5, y: 0.16015625}
 --- !u!114 &114987028547752124
 MonoBehaviour:
   m_ObjectHideFlags: 1
