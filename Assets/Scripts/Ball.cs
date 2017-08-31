@@ -33,6 +33,19 @@ public class Ball : MonoBehaviour {
                 hasStarted = true;
             }
         }
+        else
+        {
+            /// limit ball velocity within a certian range.
+            float ballVelocity = GetComponent<Rigidbody2D>().velocity.magnitude;
+            if (ballVelocity <= 7)
+            {
+                GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity.normalized * 7;
+            }
+            else if (ballVelocity >= 12)
+            {
+                GetComponent<Rigidbody2D>().velocity = GetComponent<Rigidbody2D>().velocity.normalized * 12;
+            }
+        }
 
 	}
 
